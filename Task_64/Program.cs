@@ -1,23 +1,26 @@
 ﻿/*
-Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. 
+Задайте значение M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N. 
 Выполнить с помощью рекурсии.
 
-N = 5 -> "5, 4, 3, 2, 1"
-N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
+M = 1; N = 5. -> "1, 2, 3, 4, 5"
+M = 4; N = 8. -> "4, 6, 7, 8"
 */
 
-void Show_numbers (int number)
+void Show_numbers (int m, int n)
 {
-    if (number >= 1)
+    if (n >= m)
     {
-        Console.Write(number + ", ");
-        Show_numbers(number - 1);
+        Console.Write(m + ", ");
+        Show_numbers(m + 1, n);
     }
 }
 
-Console.Write("input your number: " );
-int user_number = Convert.ToInt32(Console.ReadLine());
+Console.Write("input M: " );
+int user_m = Convert.ToInt32(Console.ReadLine());
+Console.Write("input N > M: " );
+int user_n = Convert.ToInt32(Console.ReadLine());
 
-Console.Write($"N = {user_number} -> ");
-Show_numbers(user_number);
+Console.Write($"M = {user_m}; N = {user_n}. --> ");
+
+Show_numbers(user_m, user_n);
 Console.Write("\b\b ");
