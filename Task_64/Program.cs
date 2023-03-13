@@ -17,10 +17,13 @@ void Show_numbers (int m, int n)
 
 Console.Write("input M: " );
 int user_m = Convert.ToInt32(Console.ReadLine());
-Console.Write("input N > M: " );
+Console.Write("input N: " );
 int user_n = Convert.ToInt32(Console.ReadLine());
 
 Console.Write($"M = {user_m}; N = {user_n}. --> ");
 
-Show_numbers(user_m, user_n);
+if (user_n < user_m)
+    Console.WriteLine("input N > M: " );
+else
+    Show_numbers(user_m, user_n);
 Console.Write("\b\b ");
